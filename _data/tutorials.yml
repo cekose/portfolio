@@ -1,0 +1,11 @@
+- name: 'Test 1'
+  folder: 'project-1'
+  file-name: 'tutorial-1'
+
+- name: 'Test 2'
+  folder: 'project-2'
+  file-name: 'tutorial-2'
+
+- name: 'Test 3'
+  folder: 'project-3'
+  file-name: 'tutorial-3'

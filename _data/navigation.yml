@@ -1,0 +1,7 @@
+
+- name: About
+  link: about.html
+- name: Tutorials
+  link: tutorials.html
+- name: Notes
+  link: notes.html

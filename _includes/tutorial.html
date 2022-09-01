@@ -1,0 +1,16 @@
+<h1> Tutorial Posts</h1>
+
+<section>
+  <div class="thumbnail-container">
+    {% for tutorial in site.data.tutorials %}
+
+        <a href="{{ site.baseurl }}//tutorials/{{tutorial.file-name}}" class="thumbnail" style="background-image: url({{ site.baseurl }}/assets/images/tutorials/{{tutorial.folder}}/thumbnail.jpg)">
+
+          <div class="thumbnail-overlay">
+            <strong>{{ tutorial.name }}</strong>
+
+          </div>
+        </a>
+
+    {% endfor %}
+</section>

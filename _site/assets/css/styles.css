@@ -1,0 +1,71 @@
+header { height: 90px; }
+
+header .logo { font-size: 20px; font-weight: 700; float: left; margin: 25px; }
+
+.logo a { display: inline-block; font-size: 40px; color: black; }
+
+header .logo a:link { text-decoration: underline; }
+
+header nav { float: right; margin: 15px 20px 0px 0px; }
+
+header nav a { font-size: 20px; font-weight: 700; display: inline-block; margin-left: 10px; color: black; }
+
+nav a:hover { color: red; }
+
+nav a:link { text-decoration: none; }
+
+@media (max-width: 768px) { header .logo { margin: 10px 30px 0px 0px; } header nav { margin: 0px; margin-top: 18px; float: left; } header nav a { font-size: 16px; margin-left: 0px; margin-right: 10px; } }
+
+.current { color: green; }
+
+footer { height: 200px; }
+
+footer .footer-wrap { max-width: 500px; margin: 0px auto 0px; padding: 10px; }
+
+.footer-wrap .footer-tagline { text-align: center; color: black; font-size: 24px; font-weight: 700; }
+
+.footer-wrap .social-media { text-align: center; }
+
+.social-media nav { margin: 0px; padding: 0px; }
+
+nav a { font-size: 20px; font-weight: 700; margin: 10px; color: black; }
+
+@media (max-width: 768px) { footer .footer-wrap { max-width: 80vw; margin-left: 30px; } }
+
+body { background-color: white; font-family: 'Roboto', sans-serif; font-size: 16px; }
+
+body .site-container { width: 750px; margin: auto; }
+
+a { color: green; text-decoration: none; }
+
+a:link { text-decoration: none; }
+
+ul { list-style-type: none; }
+
+a:hover { color: red; }
+
+@media (max-width: 768px) { .site-container { width: 95vw; } }
+
+.page-content { width: 650px; margin: 30px; }
+
+.page-content h1 { line-height: 1.5; color: black; font-size: 30px; font-weight: 700; }
+
+.page-content p { line-height: 1.5; font-size: 16px; }
+
+@media (max-width: 768px) { .page-content { width: 80vw; } }
+
+.thumbnail-container { max-width: 750px; margin: 0px auto 0px; padding: 30px; }
+
+.thumbnail-container .thumbnail { box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); cursor: pointer; display: block; width: 600px; height: 300px; margin: 0px auto 30px; position: relative; overflow: hidden; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+
+.thumbnail .thumbnail-overlay { position: relative, 100%, 0px, null, 0px; height: 100%; text-align: center; display: flex; align-items: center; justify-content: space-around; }
+
+strong { display: none; }
+
+.thumbnail-overlay:hover, .thumbnail-overlay:hover strong { display: block; position: absolute, 100%, 0px, null, 0px; padding: 12.5%; color: white; line-height: 1.2; font-size: 24px; font-weight: 500; background: rgba(51, 51, 51, 0.9); }
+
+.thumbnail-overlay:hover strong, .thumbnail-overlay:hover strong strong { background-color: rgba(1, 0, 1, 0.01); }
+
+@media (max-width: 768px) { .thumbnail-container { max-width: 80vw; margin-left: 10px; } .thumbnail-container .thumbnail { width: 80vw; height: 40vw; } }
+
+/*# sourceMappingURL=styles.css.map */

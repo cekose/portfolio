@@ -1,0 +1,40 @@
+footer {
+  height: 200px;
+}
+
+footer .footer-wrap {
+  max-width: 500px;
+  margin: 0px auto 0px;
+  padding: 10px;
+}
+
+.footer-wrap .footer-tagline {
+  text-align: center;
+  color: rgba(0,0,0,1);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.footer-wrap .social-media {
+  text-align: center;
+}
+
+.social-media nav {
+  margin: 0px;
+  padding: 0px;
+}
+
+nav a {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px;
+  color: rgba(0,0,0,1)
+}
+
+@media (max-width: 768px) {
+  footer .footer-wrap {
+    max-width: 80vw;
+    margin-left: 30px;
+
+  }
+}
