@@ -34,7 +34,7 @@ excerpt: Study for Voice and Emotion Detection.
 
 ## Waveform
 
-Speech signals are sound signals, defined as preassure variations travelling through the air.
+Speech signals are sound signals, defined as pressure variations travelling through the air.
 
 
 A speech signal is then represented by a sequence of numbers $ x_n $, which represent the relative air pressure at time-instant n∈ℕ.
@@ -112,7 +112,7 @@ For signal analysis we would like the windowed signal to resemble the original s
 
 For signal processing the most common technique is to use a technique known as overlap-add.
 
-![png]({{ site.url }}/assets/images/notes/speech-rec-notes/overlap-add.png)
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/overlap-add.png){: width="100%" }
 
 In overlap-add, we extract overlapping windows of the signal, apply some processing and reconstruct by windowing a second time and then adding overlapping segments together.
 
