@@ -1,4 +1,4 @@
-I"t•<h1 id="study-for-voice-and-emotion-detection-test5">Study for Voice and Emotion Detection test5</h1>
+I"õ”<h1 id="study-for-voice-and-emotion-detection-test5">Study for Voice and Emotion Detection test5</h1>
 
 <h2 id="glosary">Glosary</h2>
 
@@ -367,7 +367,4 @@ Time = np.linspace(0, len(signal) / 16000, num=len(signal))
 </code></pre></div></div>
 
 <p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_18_1.png" alt="png" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-</code></pre></div></div>
 :ET

@@ -408,9 +408,3 @@ ax2.set_xlabel('Seconds')
 
 
 ![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_18_1.png)
-
-
-
-```python
-
-```
