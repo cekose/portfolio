@@ -5,7 +5,7 @@ title: Speech Recognition Notes
 excerpt: Study for Voice and Emotion Detection.
 ---
 
-# Study for Voice and Emotion Detection test
+# Study for Voice and Emotion Detection test2
 
 ## Glosary
 
