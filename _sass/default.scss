@@ -9,22 +9,12 @@ body .site-container {
   margin: auto;
 }
 
-a {
-  color: green;
-  text-decoration: none;
-}
-
-a:link {
-  text-decoration: none;
-
-}
-
-ul {
-  list-style-type: none;
-}
-
 a:hover {
   color: red;
+}
+
+img {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

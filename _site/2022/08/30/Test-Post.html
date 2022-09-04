@@ -4,22 +4,33 @@
     <meta charset="utf-8">
     <title>Test post</title>
     <script src="https://kit.fontawesome.com/147c0ec98c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/portfolio/assets/css/styles.css"
+    <!-- Mathjax Support -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="/assets/css/styles.css"
   </head>
   <body>
     <div class="site-container">
     <header>
   <div class="logo">
-    <a href= "/portfolio//about.html"/> *Cem </a>
+    <a href= "https://www.cekose.com/about.html"> *Cem </a>
   </div>
 
   <nav>
   
-    <a href="/portfolio/about.html" >About</a>
+    <a href="https://www.cekose.com/about.html" >About</a>
   
-    <a href="/portfolio/tutorials.html" >Tutorials</a>
+    <a href="https://www.cekose.com/tutorials.html" >Tutorials</a>
   
-    <a href="/portfolio/notes.html" >Notes</a>
+    <a href="https://www.cekose.com/notes.html" >Notes</a>
   
 </nav>
 
@@ -28,6 +39,16 @@
     <section>
   <div class="page-content">
     <p>Just a test post</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">hamming</span><span class="p">(</span><span class="mi">51</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Hamming Window"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Ampliture"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Sample"</span><span class="p">)</span>
+</code></pre></div></div>
 
   </div>
 </section>

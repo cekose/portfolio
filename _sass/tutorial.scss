@@ -5,6 +5,20 @@
   //background-color: red;
 }
 
+.thumbnail-container a {
+  color: green;
+  text-decoration: none;
+}
+
+.thumbnail-container a:link {
+  text-decoration: none;
+
+}
+
+.thumbnail-container ul {
+  list-style-type: none;
+}
+
 .thumbnail-container .thumbnail {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   cursor: pointer;
