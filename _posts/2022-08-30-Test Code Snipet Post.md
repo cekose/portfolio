@@ -1,7 +1,7 @@
 ---
 layout: page
 author: Cem Kose
-title: Test Code Snipet Post
+title: Test Code Snipet PostT
 excerpt: Testing adding code snipets.
 ---
 
