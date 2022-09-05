@@ -214,7 +214,7 @@ noise *= np.exp(-time/5)
 x = carrier + noise
 ```
 
-and the rest
+and the and the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the rest
 
 ```python
 # Visualisation
