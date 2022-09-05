@@ -68,7 +68,7 @@ strong { display: none; }
 
 @media (max-width: 768px) { .thumbnail-container { max-width: 80vw; margin-left: 10px; } .thumbnail-container .thumbnail { width: 80vw; height: 40vw; } }
 
-.post-container { max-width: 750px; margin: 0px auto 0px; padding: 30px; }
+.post-container { max-width: 750px; margin: 30px auto 0px; padding: 30px; }
 
 .post-container a { color: green; text-decoration: none; }
 
