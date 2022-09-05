@@ -1,6 +1,6 @@
 - email:
   id: 'contact@cekose.com'
-  href: 'mailto:'
+  href: 'mailto: contact@cekose.com'
   title: 'Email'
   fa-icon: 'fa-solid fa-envelope'
 
