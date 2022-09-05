@@ -143,3 +143,20 @@ import IPython.display as ipd
 
 %matplotlib inline
 {% endhighlight %}
+
+## Implementation of scipy.signal.stft and scipy.signal.spectrogram
+
+Code taken from official scipy doc pages.
+
+
+Generate a test signal, a 2 Vrms sine wave whose frequency is slowly modulated around 3kHz,
+corrupted by white noise of exponentially decreasing magnitude sampled at 10 kHz.
+
+
+To break this down a little. What is <strong>Vrms</strong>. First, this is a really good reference page for this formula.
+http://www.referencedesigner.com/rfcal/cal_04.php
+
+<strong>Vrms, Voltage root-mean square</strong> is defined as square root of the mean of the squares of the values for the one time period of the sine wave.
+
+
+The formula can be used to the heating effect of a voltage in a resistor. In the code snipet below it is used to define the peaks of the sinusoids.
