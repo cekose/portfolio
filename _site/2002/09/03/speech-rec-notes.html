@@ -66,15 +66,15 @@
 
 <p>Speech signals are sound signals, defined as pressure variations travelling through the air.</p>
 
-<p>A speech signal is then represented by a sequence of numbers $ x_n $, which represent the relative air pressure at time-instant n∈ℕ.</p>
+<p>A speech signal is then represented by a sequence of numbers \(x_n\), which represent the relative air pressure at time-instant n∈ℕ.</p>
 
 <p>This representation is known as pulse code modulation often abbreviated as PCM.</p>
 
 <p>The accuracy of this representation is then specified by two factors;</p>
 
 <ol>
-  <li>the sampling frequency (the step in time between $ n $ and $ n+1 $).</li>
-  <li>the accuracy and distribution of amplitudes of $ x_n $ .</li>
+  <li>the sampling frequency (the step in time between \(n\) and \(n+1\)).</li>
+  <li>the accuracy and distribution of amplitudes of \(x_n\) .</li>
 </ol>
 
 <h3 id="sampling-rate">Sampling Rate</h3>
@@ -85,9 +85,9 @@
 
 <p>An important aspect of Sampling is the Nyquist Theorem. The Nyquist Theorem states that in order to adequately reproduce a continuous-time signal it should sampled at a rate that is 2X the highest frequency you wish to record.</p>
 
-<p style="text-align: center;"> ***Nyquist Sampling*** </p>
+<p style="text-align: center;"><b>Nyquist Sampling</b></p>
 
-<p style="text-align: center;">  $ (f) = d/2 $ </p>
+\[(f) = d/2\]
 
 <p style="text-align: center;"><b>Nyquist Sampling (f) = d</b>, where <b>d</b> is the highest frequency you wish to record <b>/ 2</b></p>
 
@@ -181,27 +181,19 @@ http://www.referencedesigner.com/rfcal/cal_04.php</p>
 
 <h3 id="what-is-the-difference-between-scipysignalstft-and-scipysignalspectrogram">What is the difference between scipy.signal.stft and scipy.signal.spectrogram</h3>
 
-<p>The <strong><em>short-time Fourier transform (STFT)</em></strong>, is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.</p>
+<p>The <b>short-time Fourier transform (STFT)</b>, is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.</p>
 
 <p>In practice, the procedure for computing STFTs is to divide a longer time signal into shorter segments of equal length and then compute the Fourier transform separately on each shorter segment.</p>
 
 <p>This reveals the Fourier spectrum on each shorter segment. One then usually plots the changing spectra as a function of time.</p>
 
-<p>A <strong><em>spectrogram</em></strong> is a visual representation of the spectrum of frequencies of a signal as it varies with time.</p>
+<p>A <b>spectrogram</b> is a visual representation of the spectrum of frequencies of a signal as it varies with time.</p>
 
-<p>The spectrogram basically cuts your <strong><em>signal in small windows</em></strong>, and display a range of colors showing the intensity of this or that specific frequency. <strong><em>Exactly as the STFT. In fact it’s using the STFT.</em></strong></p>
+<p>The spectrogram basically cuts your <b>signal in small windows</b>, and display a range of colors showing the intensity of this or that specific frequency. <b>Exactly as the STFT. In fact it’s using the STFT.</b></p>
 
-<p><strong><em>By definition, the spectrogram is squared magnitude of the short-time Fourier transform (STFT) of the signal s(t):</em></strong></p>
+<p><b>By definition, the spectrogram is squared magnitude of the short-time Fourier transform (STFT) of the signal s(t):</b></p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>spectrogram $$ (t, w) =</td>
-      <td>STFT(t, w)</td>
-      <td>^2 $$</td>
-    </tr>
-  </tbody>
-</table>
+<p>spectrogram \((t, w) = [STFT(t, w)]^2\)</p>
 
 <p>The stft function shows a linear visualisation because of the abs function whereas, spectrogram does not.</p>
 
@@ -338,7 +330,7 @@ Time = np.linspace(0, len(signal)
 
 <p>I’ve been able to work through this and found this very clear explanation on stackoverflow.</p>
 
-<p><strong><em>scipy.io.wavfile.read returns the tuple (rate, data). If the file is stereo, data is a numpy array with shape (nsamples, 2). To get a specific channel, use a slice of data.</em></strong></p>
+<p><b>scipy.io.wavfile.read returns the tuple (rate, data). If the file is stereo, data is a numpy array with shape (nsamples, 2). To get a specific channel, use a slice of data.</b></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rate</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">wavfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="c1"># data0 is the data from channel 0.
@@ -390,8 +382,6 @@ Time = np.linspace(0, len(signal)
                                     <span class="n">detrend</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">freqs</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> \
           <span class="n">np</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">spec</span><span class="p">.</span><span class="n">T</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span>
-
-
 
 
 <span class="n">freqs</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">spectrogram</span> <span class="o">=</span>
