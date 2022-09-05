@@ -263,32 +263,38 @@ print("Samplerate =", samplerate)
 # Visualising Amplitude in the sample and time domains.
 
 """
-Visualising a mono signal converted from stereo using ffmpeg.
+Visualising a mono signal converted from stereo
+using ffmpeg.
 
-I have had trouble in the past reading in .wav files
-and plotting any sort of visualisations due to issues with
-mono/stereo. This can be remedied but for simplicity I have
-converted the file using the following snipet.
+I have had trouble in the past reading in .wav
+files and plotting any sort of visualisations due
+to issues with mono/stereo. This can be remedied
+but for simplicity I have converted the file using
+the following snipet.
 
-ffmpeg -i test.wav -acodec pcm_s16le -ac 1 -ar 16000 output1.wav
+ffmpeg -i test.wav -acodec pcm_s16le
+                    -ac 1 -ar 16000 output1.wav
 
 """
 
 # Splicing for X to X seconds
-#signal = signal[int(0.9 * sample_rate):int(3.3 * sample_rate)]
+#signal = signal[int(0.9 *
+#sample_rate):int(3.3 * sample_rate)]
 
 # Splicing for X to X samples
 #signal = signal[int(5000):int(30000)]
 
 
 """
-To Plot the x-axis in seconds you need get the frame rate
-and divide by size of your signal. linspace function
-from numpy is used to create a Time Vector spaced linearly
-with the size of the audio fileand finally you can use plot
+To Plot the x-axis in seconds you need get the
+frame rate and divide by size of your signal.
+linspace function from numpy is used to create
+a Time Vector spaced linearly with the size of
+the audio fileand finally you can use plot
 again like plt.plot(Time,signal)
 
-Time = np.linspace(0, len(signal) / 16000, num=len(signal))
+Time = np.linspace(0, len(signal)
+                / 16000, num=len(signal))
 
 """
 
@@ -303,7 +309,8 @@ ax1.plot(signal)
 
 # Second plot is Amplitude / Time graph
 ax2 = fig.add_subplot(212)
-ax2.set_title("Mono Signal Wave x-axis in the Time Domain")
+ax2.set_title("Mono Signal Wave x-axis \
+        in the Time Domain")
 ax2.set_xlabel('Time [s]')
 ax2.set_ylabel('Amplitude')
 ax2.plot(np.linspace(0, len(signal) / sample_rate,
