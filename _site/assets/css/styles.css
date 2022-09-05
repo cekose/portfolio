@@ -76,6 +76,10 @@ strong { display: none; }
 
 .post-container ul { list-style-type: none; }
 
+a:hover { color: red; }
+
+@media (max-width: 768px) { .site-container { width: 95vw; } }
+
 highlight { background-color: #ffffff; padding: 5px 10px; margin: 20px 0; }
 
 .highlight pre { /* overflow: scroll; Prefer no word wrap? Uncomment this line and comment out the 2 lines below. */ word-break: break-all; word-wrap: break-word; }
