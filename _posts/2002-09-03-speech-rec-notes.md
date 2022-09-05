@@ -63,3 +63,39 @@ An important aspect of Sampling is the Nyquist Theorem. The Nyquist Theorem stat
 <p style="text-align: center;"><b>Nyquist Sampling (f) = d</b>, where <b>d</b> is the highest frequency you wish to record <b>/ 2</b></p>
 
 Most important information in speech signals are the formants, which reside in the range 300Hz - 3500Hz. This means that the lower limit of the sampling rate will have to be between 7-8kHz.
+
+## Windowing
+
+A spoken sentence is a sequence of phonemes. Speech signals are therefore time-variant in character. To extract information from a speech signal, the signal must be split into sufficiently short segments, such that heuristically speaking, each segment contains only one phoneme.
+
+Another way to think of this is to extract segments which are short enough that the properties of the speech signal does not have time to change within that segment.
+
+Windowing a common method in signal processing. It is used to split the input signal into temporal segments. When windowing is applied to a signal the borders of the segment are visible as discontinuities.
+
+In other words a windowed segment will have borders that go to zero. Windowing does change the signal however, the change is designed such that its effects on the signal are minimised.
+
+There are two distinct applications of windowing with different requirements;
+
+1. Analysis
+2. Processing
+
+In analysis the aim is to extract information as accurately as possible. In processing in addition to extracting information we also require the ability to recreate the signal from a sequence of windows.
+
+A standard Hamming window is presented below.
+
+{% highlight python %}
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+window = np.hamming(51)
+plt.plot(window)
+plt.title("Hamming Window")
+plt.ylabel("Ampliture")
+plt.xlabel("Sample")
+
+{% endhighlight %}
+
+
+
+    Text(0.5, 0, 'Sample')
