@@ -99,3 +99,47 @@ plt.xlabel("Sample")
 
 
     Text(0.5, 0, 'Sample')
+
+
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_7_1.png)
+
+
+For signal analysis we would like the windowed signal to resemble the original signal as much as possible. When choosing a windowing function for analysis, the main criteria to consider is spectral distortion.
+
+For signal processing the most common technique is to use a technique known as overlap-add.
+
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/overlap-add.png){: width="100%" }
+
+In overlap-add, we extract overlapping windows of the signal, apply some processing and reconstruct by windowing a second time and then adding overlapping segments together.
+
+## Spectrogram and Short-time Fourier transform (STFT)
+
+The Fourier spectrum of a signal reveals the signals constituent frequencies. Revealing the Fourier spectrum of a signal is an intuitive way of examining the signal.
+
+As mentioned earlier speech signals are non-stationary signals. Applying a Fourier transform or visualising the spectrogram of the entire signal will reveal the average of all phonemes in the sentence.
+
+When the goal is to recognise each phoneme separately, we can focus on a single phonome at a time by applying a window to the signal. By windowing and applying a discrete fourier transformation on each window we obtain the Short-time Fourier transform.
+
+
+{% highlight python %}
+# OS library
+import os
+from os.path import isdir, join
+from pathlib import Path
+import pandas as pd
+
+# Math
+import numpy as np
+from scipy.fftpack import fft
+from scipy import signal
+from scipy.io import wavfile
+
+from sklearn.decomposition import PCA
+
+# Visualization
+import matplotlib.pyplot as plt
+import IPython.display as ipd
+
+
+%matplotlib inline
+{% endhighlight %}
