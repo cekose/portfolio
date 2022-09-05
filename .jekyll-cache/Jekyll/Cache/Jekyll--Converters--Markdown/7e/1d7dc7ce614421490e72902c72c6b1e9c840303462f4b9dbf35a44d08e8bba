@@ -1,38 +1,4 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Speech Recognition Notes</title>
-    <script src="https://kit.fontawesome.com/147c0ec98c.js" crossorigin="anonymous"></script>
-    <!-- Mathjax Support -->
-    <!-- Mathjax Support -->
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    <link rel="stylesheet" href="/assets/css/styles.css"
-  </head>
-  <body>
-    <div class="site-container">
-    <header>
-  <div class="logo">
-    <a href= "https://www.cekose.com/about.html"> *Cem </a>
-  </div>
-
-  <nav>
-  
-    <a href="https://www.cekose.com/about.html" >About</a>
-  
-    <a href="https://www.cekose.com/tutorials.html" >Tutorials</a>
-  
-    <a href="https://www.cekose.com/notes.html" >Notes</a>
-  
-</nav>
-
-</header>
-
-    <section>
-  <div class="page-content">
-    <h1 id="study-for-voice-and-emotion-detection">Study for Voice and Emotion Detection</h1>
+I"B•<h1 id="study-for-voice-and-emotion-detection">Study for Voice and Emotion Detection</h1>
 
 <h2 id="glosary">Glosary</h2>
 
@@ -409,30 +375,4 @@ Time = np.linspace(0, len(signal)
 </code></pre></div></div>
 
 <p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_18_1.png" alt="png" /></p>
-
-  </div>
-</section>
-
-    <footer>
-  <div class="footer-wrap">
-    <div class="footer-tagline">
-    <p></p>
-
-    </div>
-    <div class="social-media">
-      <nav>
-        
-          <a href="mailto:" target="_blank"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-        
-          <a href="https://www.gitlab.com/cemkose" target="_blank"><i class="fa-brands fa-gitlab" aria-hidden="true"></i></a>
-        
-          <a href="https://www.gitlab.com/cemkose" target="_blank"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-        
-      </nav>
-    </div>
-  </div>
-</footer>
-
-    </div>
-  </body>
-</html>
+:ET

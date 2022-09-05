@@ -40,6 +40,8 @@ a:hover { color: red; }
 
 @media (max-width: 768px) { .site-container { width: 95vw; } }
 
+.highlight { width: 100px; }
+
 .page-content { width: 650px; margin: 30px; }
 
 .page-content h1 { line-height: 1.5; color: black; font-size: 30px; font-weight: 700; }

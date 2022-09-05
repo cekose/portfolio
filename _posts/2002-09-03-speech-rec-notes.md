@@ -321,3 +321,96 @@ plt.show()
 
 
 ![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_15_0.png)
+
+
+## Reading Stereo files with scipy
+
+One of the first challenges I've had with reading .wav files is getting an error when reading stereo files with scipy.io.wavfile.read.
+
+
+I've been able to work through this and found this very clear explanation on stackoverflow.
+
+***scipy.io.wavfile.read returns the tuple (rate, data). If the file is stereo, data is a numpy array with shape (nsamples, 2). To get a specific channel, use a slice of data.***
+
+```python
+rate, data = wavfile.read(path)
+# data0 is the data from channel 0.
+data0 = data[:, 0]
+```
+
+{% highlight python %}
+
+# Reading in a new .wav file
+sample_rate, signal = wavfile.read('test.wav')
+
+# Splicing the signal for 0 to 3.3 secs
+signal = signal[0:int(3.3 * sample_rate)]
+
+# Using np.linspace to create evenly space sequence of samples.
+# np.linspace(start = , stop= , number of items to generate within the range= )
+# in this case starts at 0s, stops at 4.2375625s, generates 67801 items.
+time = np.linspace(0., samples.shape[0] / samplerate, signal.shape[0])
+
+# plots time variable in x axis and left channel amplitude on y axis
+plt.plot(time, signal[:, 0], label="Left channel")
+# plots time variable in x axis and right channel amplitude on y axis
+plt.plot(time, signal[:, 1], label="Right channel")
+plt.legend()
+plt.xlabel("Time [s]")
+plt.ylabel("Amplitude")
+plt.show()
+
+{% endhighlight %}
+
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_17_1.png)
+
+
+
+```python
+sample_rate, samples = scipy.io.wavfile.read('output1.wav')
+
+
+def log_specgram(audio, sample_rate, window_size=20,
+                 step_size=10, eps=1e-10):
+    nperseg = int(round(window_size * sample_rate / 1e3))
+    noverlap = int(round(step_size * sample_rate / 1e3))
+    freqs, times, spec = signal.spectrogram(audio,
+                                    fs=sample_rate,
+                                    window='hann',
+                                    nperseg=nperseg,
+                                    noverlap=noverlap,
+                                    detrend=False)
+    return freqs, times, np.log(spec.T.astype(np.float32) + eps)
+
+
+
+
+freqs, times, spectrogram = log_specgram(samples, sample_rate)
+
+fig = plt.figure(figsize=(14, 8))
+ax1 = fig.add_subplot(211)
+ax1.set_yticks(freqs[::16])
+ax1.set_xticks(times[::16])
+ax1.set_title('Raw wave of Mono Signal')
+ax1.set_ylabel('Amplitude')
+ax1.plot(np.linspace(0, len(samples) / sample_rate, num=len(samples)), samples)
+
+ax2 = fig.add_subplot(212)
+ax2.imshow(spectrogram.T, aspect='auto', origin='lower',
+           extent=[times.min(), times.max(), freqs.min(), freqs.max()])
+ax2.set_yticks(freqs[::16])
+ax2.set_xticks(times[::16])
+ax2.set_title('Spectrogram of Mono Signal')
+ax2.set_ylabel('Freqs in Hz')
+ax2.set_xlabel('Seconds')
+```
+
+
+
+
+    Text(0.5, 0, 'Seconds')
+
+
+
+
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_18_1.png)
