@@ -57,8 +57,9 @@ A common example is the conversion of a sound wave (a continuous signal) to a se
 
 An important aspect of Sampling is the Nyquist Theorem. The Nyquist Theorem states that in order to adequately reproduce a continuous-time signal it should sampled at a rate that is 2X the highest frequency you wish to record.
 
-<p style="text-align: center;"><strong>Nyquist Sampling</strong></p>
-<p style="text-align: center;"><strong>$ (f) = d/2 $ </strong></p>
+<p style="text-align: center;"> ***Nyquist Sampling*** </p>
+
+<p style="text-align: center;">  $ (f) = d/2 $ </p>
 
 <p style="text-align: center;"><b>Nyquist Sampling (f) = d</b>, where <b>d</b> is the highest frequency you wish to record <b>/ 2</b></p>
 
@@ -211,24 +212,4 @@ noise = np.random.normal(scale=np.sqrt(noise_power),
                         size=time.shape)
 noise *= np.exp(-time/5)
 x = carrier + noise
-
-# Visualisation
-fig = plt.figure(figsize=(14, 12))
-
-ax1 = fig.add_subplot(211)
-
-f, t, Zxx = signal.stft(x, fs, nperseg=1000)
-ax1.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
-ax1.set_title('STST Magnitude')
-ax1.set_ylabel('Frequency [Hz]')
-ax1.set_xlabel('Time [sec]')
-
-ax2 = fig.add_subplot(212)
-
-f, t, Sxx = signal.spectrogram(x, fs)
-ax2.pcolormesh(t, f, Sxx, shading='gouraud')
-ax2.set_title('Spectrogram')
-ax2.set_ylabel('Frequency [Hz]')
-ax2.set_xlabel('Time [sec]')
-plt.show()
 ```
