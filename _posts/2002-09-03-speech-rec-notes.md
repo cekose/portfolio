@@ -163,7 +163,7 @@ The formula can be used to the heating effect of a voltage in a resistor. In the
 
 ### What is the difference between scipy.signal.stft and scipy.signal.spectrogram
 
-The <strong>short-time Fourier transform (STFT)</strong>, is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.
+The ***short-time Fourier transform (STFT)***, is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.
 
 
 In practice, the procedure for computing STFTs is to divide a longer time signal into shorter segments of equal length and then compute the Fourier transform separately on each shorter segment.
@@ -172,15 +172,62 @@ In practice, the procedure for computing STFTs is to divide a longer time signal
 This reveals the Fourier spectrum on each shorter segment. One then usually plots the changing spectra as a function of time.
 
 
-A <strong>spectrogram</strong> is a visual representation of the spectrum of frequencies of a signal as it varies with time.
+A ***spectrogram*** is a visual representation of the spectrum of frequencies of a signal as it varies with time.
 
 
-The spectrogram basically cuts your <strong>signal in small windows</strong>, and display a range of colors showing the intensity of this or that specific frequency. <strong>Exactly as the STFT. In fact it's using the STFT.</strong>
+The spectrogram basically cuts your ***signal in small windows***, and display a range of colors showing the intensity of this or that specific frequency. ***Exactly as the STFT. In fact it's using the STFT.***
 
 
-<strong>By definition, the spectrogram is squared magnitude of the short-time Fourier transform (STFT) of the signal s(t):</strong>
+***By definition, the spectrogram is squared magnitude of the short-time Fourier transform (STFT) of the signal s(t):***
 
 
 spectrogram$ (t, w) = |STFT(t, w)|^2 $
 
 The stft function shows a linear visualisation because of the abs function whereas, spectrogram does not.
+
+
+```python
+# Generating a test signal
+
+# fs = sample rate
+fs = 10e3
+
+N = 1e5
+
+# amp
+amp = 2 * np.sqrt(2)
+
+# noise power
+noise_power = 0.01 * fs / 2
+
+# time
+time = np.arange(N) /float(fs)
+mod = 500*np.cos(2*np.pi*0.25*time)
+carrier = amp * np.sin(2*np.pi*3e3*time + mod)
+
+# noise
+noise = np.random.normal(scale=np.sqrt(noise_power),
+                        size=time.shape)
+noise *= np.exp(-time/5)
+x = carrier + noise
+
+# Visualisation
+fig = plt.figure(figsize=(14, 12))
+
+ax1 = fig.add_subplot(211)
+
+f, t, Zxx = signal.stft(x, fs, nperseg=1000)
+ax1.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
+ax1.set_title('STST Magnitude')
+ax1.set_ylabel('Frequency [Hz]')
+ax1.set_xlabel('Time [sec]')
+
+ax2 = fig.add_subplot(212)
+
+f, t, Sxx = signal.spectrogram(x, fs)
+ax2.pcolormesh(t, f, Sxx, shading='gouraud')
+ax2.set_title('Spectrogram')
+ax2.set_ylabel('Frequency [Hz]')
+ax2.set_xlabel('Time [sec]')
+plt.show()
+```
