@@ -1,17 +1,17 @@
 - email:
-  id: 'your.name@yoursite.com'
+  id: 'contact@cekose.com'
   href: 'mailto:'
   title: 'Email'
   fa-icon: 'fa-solid fa-envelope'
 
 - gitlab:
-  id: 'your-facebook-username'
+  id: 'cemkose'
   href: 'https://www.gitlab.com/cemkose'
   title: 'gitlab'
   fa-icon: 'fa-brands fa-gitlab'
 
 - linkedin:
-  id: 'your-facebook-username'
+  id: 'your-linked-username'
   href: 'https://www.gitlab.com/cemkose'
   title: 'linkedin'
   fa-icon: 'fa-brands fa-linkedin'
