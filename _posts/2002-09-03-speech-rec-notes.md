@@ -213,3 +213,25 @@ noise = np.random.normal(scale=np.sqrt(noise_power),
 noise *= np.exp(-time/5)
 x = carrier + noise
 ```
+
+```python
+# Visualisation
+fig = plt.figure(figsize=(14, 12))
+
+ax1 = fig.add_subplot(211)
+
+f, t, Zxx = signal.stft(x, fs, nperseg=1000)
+ax1.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
+ax1.set_title('STST Magnitude')
+ax1.set_ylabel('Frequency [Hz]')
+ax1.set_xlabel('Time [sec]')
+
+ax2 = fig.add_subplot(212)
+
+f, t, Sxx = signal.spectrogram(x, fs)
+ax2.pcolormesh(t, f, Sxx, shading='gouraud')
+ax2.set_title('Spectrogram')
+ax2.set_ylabel('Frequency [Hz]')
+ax2.set_xlabel('Time [sec]')
+plt.show()
+```
