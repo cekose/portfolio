@@ -212,11 +212,7 @@ noise = np.random.normal(scale=np.sqrt(noise_power),
                         size=time.shape)
 noise *= np.exp(-time/5)
 x = carrier + noise
-```
 
-and the and the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the restand the rest
-
-```python
 # Visualisation
 fig = plt.figure(figsize=(14, 12))
 
@@ -238,3 +234,83 @@ ax2.set_ylabel('Frequency [Hz]')
 ax2.set_xlabel('Time [sec]')
 plt.show()
 ```
+
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_12_0.png)
+
+
+## Analysis and visualisations on a Mono Sound file from the TIMIT dataset
+
+
+```python
+# Standard way of reasing wav files with scypi
+samplerate, samples = wavfile.read('output1.wav')
+
+length = samples.shape[0] / samplerate
+print(f"Signal length in seconds = {length}s")
+print(f"Signal data type = {samples.dtype}")
+print(f"Number of samples = {samples.shape[0]}")
+print("Samplerate =", samplerate)
+```
+
+    Signal length in seconds = 4.2375625s
+    Signal data type = int16
+    Number of samples = 67801
+    Samplerate = 16000
+
+
+
+```python
+# Visualising Amplitude in the sample and time domains.
+
+"""
+Visualising a mono signal converted from stereo using ffmpeg.
+
+I have had trouble in the past reading in .wav files
+and plotting any sort of visualisations due to issues with
+mono/stereo. This can be remedied but for simplicity I have
+converted the file using the following snipet.
+
+ffmpeg -i test.wav -acodec pcm_s16le -ac 1 -ar 16000 output1.wav
+
+"""
+
+# Splicing for X to X seconds
+#signal = signal[int(0.9 * sample_rate):int(3.3 * sample_rate)]
+
+# Splicing for X to X samples
+#signal = signal[int(5000):int(30000)]
+
+
+"""
+To Plot the x-axis in seconds you need get the frame rate
+and divide by size of your signal. linspace function
+from numpy is used to create a Time Vector spaced linearly
+with the size of the audio fileand finally you can use plot
+again like plt.plot(Time,signal)
+
+Time = np.linspace(0, len(signal) / 16000, num=len(signal))
+
+"""
+
+fig = plt.figure(figsize=(14, 12))
+
+# First plot for Amplitude / Sample graph
+ax1 = fig.add_subplot(211)
+ax1.set_title("Mono Signal wave")
+ax1.set_xlabel('Samples')
+ax1.set_ylabel('Amplitude')
+ax1.plot(signal)
+
+# Second plot is Amplitude / Time graph
+ax2 = fig.add_subplot(212)
+ax2.set_title("Mono Signal Wave x-axis in the Time Domain")
+ax2.set_xlabel('Time [s]')
+ax2.set_ylabel('Amplitude')
+ax2.plot(np.linspace(0, len(signal) / sample_rate,
+      num=len(signal)), signal)
+
+plt.show()
+```
+
+
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_15_0.png)
