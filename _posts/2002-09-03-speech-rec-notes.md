@@ -235,7 +235,7 @@ ax2.set_xlabel('Time [sec]')
 plt.show()
 ```
 
-![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_12_0.png)
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_12_0.png){: width="100%" }
 
 
 ## Analysis and visualisations on a Mono Sound file from the TIMIT dataset
@@ -320,7 +320,7 @@ plt.show()
 ```
 
 
-![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_15_0.png)
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_15_0.png){: width="100%" }
 
 
 ## Reading Stereo files with scipy
@@ -336,9 +336,6 @@ I've been able to work through this and found this very clear explanation on sta
 rate, data = wavfile.read(path)
 # data0 is the data from channel 0.
 data0 = data[:, 0]
-```
-
-```python
 
 # Reading in a new .wav file
 sample_rate, signal = wavfile.read('test.wav')
@@ -367,6 +364,7 @@ plt.ylabel("Amplitude")
 plt.show()
 
 ```
+
 ![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_17_1.png)
 
 
@@ -410,7 +408,7 @@ ax2.imshow(spectrogram.T,
             origin='lower',
           extent=[times.min(),
           times.max(),
-          freqs.min(), 
+          freqs.min(),
           freqs.max()])
 ax2.set_yticks(freqs[::16])
 ax2.set_xticks(times[::16])
@@ -425,4 +423,4 @@ ax2.set_xlabel('Seconds')
 
 
 
-![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_18_1.png)
+![png]({{ site.url }}/assets/images/notes/speech-rec-notes/output_18_1.png){: width="100%" }

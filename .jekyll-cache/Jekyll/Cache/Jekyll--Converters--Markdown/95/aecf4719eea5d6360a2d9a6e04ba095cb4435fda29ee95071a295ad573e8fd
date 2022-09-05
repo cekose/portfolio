@@ -1,4 +1,4 @@
-I"‰ï<h1 id="study-for-voice-and-emotion-detection">Study for Voice and Emotion Detection</h1>
+I"çï<h1 id="study-for-voice-and-emotion-detection">Study for Voice and Emotion Detection</h1>
 
 <h2 id="glosary">Glosary</h2>
 
@@ -217,7 +217,7 @@ http://www.referencedesigner.com/rfcal/cal_04.php</p>
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_12_0.png" alt="png" /></p>
+<p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_12_0.png" alt="png" width="100%" /></p>
 
 <h2 id="analysis-and-visualisations-on-a-mono-sound-file-from-the-timit-dataset">Analysis and visualisations on a Mono Sound file from the TIMIT dataset</h2>
 
@@ -296,7 +296,7 @@ Time = np.linspace(0, len(signal)
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_15_0.png" alt="png" /></p>
+<p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_15_0.png" alt="png" width="100%" /></p>
 
 <h2 id="reading-stereo-files-with-scipy">Reading Stereo files with scipy</h2>
 
@@ -309,9 +309,7 @@ Time = np.linspace(0, len(signal)
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rate</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">wavfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="c1"># data0 is the data from channel 0.
 </span><span class="n">data0</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
-</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="c1"># Reading in a new .wav file
 </span><span class="n">sample_rate</span><span class="p">,</span> <span class="n">signal</span> <span class="o">=</span> <span class="n">wavfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="s">'test.wav'</span><span class="p">)</span>
 
@@ -339,6 +337,7 @@ Time = np.linspace(0, len(signal)
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 
 </code></pre></div></div>
+
 <p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_17_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample_rate</span><span class="p">,</span> <span class="n">samples</span> <span class="o">=</span>
@@ -379,7 +378,7 @@ Time = np.linspace(0, len(signal)
             <span class="n">origin</span><span class="o">=</span><span class="s">'lower'</span><span class="p">,</span>
           <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">times</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span>
           <span class="n">times</span><span class="p">.</span><span class="nb">max</span><span class="p">(),</span>
-          <span class="n">freqs</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span> 
+          <span class="n">freqs</span><span class="p">.</span><span class="nb">min</span><span class="p">(),</span>
           <span class="n">freqs</span><span class="p">.</span><span class="nb">max</span><span class="p">()])</span>
 <span class="n">ax2</span><span class="p">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">freqs</span><span class="p">[::</span><span class="mi">16</span><span class="p">])</span>
 <span class="n">ax2</span><span class="p">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">times</span><span class="p">[::</span><span class="mi">16</span><span class="p">])</span>
@@ -391,5 +390,5 @@ Time = np.linspace(0, len(signal)
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 0, 'Seconds')
 </code></pre></div></div>
 
-<p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_18_1.png" alt="png" /></p>
+<p><img src="https://www.cekose.com/assets/images/notes/speech-rec-notes/output_18_1.png" alt="png" width="100%" /></p>
 :ET
