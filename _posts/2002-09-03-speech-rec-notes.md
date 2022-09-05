@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 author: Cem Kose
 title: Speech Recognition Notes
 excerpt: Study for Voice and Emotion Detection.
