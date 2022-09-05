@@ -38,8 +38,6 @@ body .site-container { width: 750px; margin: auto; }
 
 a:hover { color: red; }
 
-.figure { width: 100%; }
-
 @media (max-width: 768px) { .site-container { width: 95vw; } }
 
 .page-content { width: 650px; margin: 30px; }
@@ -78,7 +76,7 @@ strong { display: none; }
 
 .post-container ul { list-style-type: none; }
 
-.highlight .hll { background-color: #ffffcc; }
+.highlight .hll { background-color: #ffffcc; width: 100%; }
 
 .highlight .c { color: #808080; }
 
