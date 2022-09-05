@@ -56,3 +56,10 @@ In DSP Sampling is the reduction of a continuous-time signal to a discrete-time 
 A common example is the conversion of a sound wave (a continuous signal) to a sequence of samples (a discrete-time signal).
 
 An important aspect of Sampling is the Nyquist Theorem. The Nyquist Theorem states that in order to adequately reproduce a continuous-time signal it should sampled at a rate that is 2X the highest frequency you wish to record.
+
+<p style="text-align: center;"><strong>Nyquist Sampling</strong></p>
+<p style="text-align: center;"><strong>$ (f) = d/2 $ </strong></p>
+
+<p style="text-align: center;"><b>Nyquist Sampling (f) = d</b>, where <b>d</b> is the highest frequency you wish to record <b>/ 2</b></p>
+
+Most important information in speech signals are the formants, which reside in the range 300Hz - 3500Hz. This means that the lower limit of the sampling rate will have to be between 7-8kHz.
