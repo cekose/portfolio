@@ -214,6 +214,8 @@ noise *= np.exp(-time/5)
 x = carrier + noise
 ```
 
+and the rest
+
 ```python
 # Visualisation
 fig = plt.figure(figsize=(14, 12))
