@@ -38,9 +38,9 @@ body .site-container { width: 750px; margin: auto; }
 
 a:hover { color: red; }
 
-@media (max-width: 768px) { .site-container { width: 95vw; } }
+.figure { width: 100%; }
 
-.highlight { width: 100px; }
+@media (max-width: 768px) { .site-container { width: 95vw; } }
 
 .page-content { width: 650px; margin: 30px; }
 
