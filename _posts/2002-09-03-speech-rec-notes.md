@@ -352,7 +352,8 @@ signal = signal[0:int(3.3 * sample_rate)]
 # items to generate within the range= )
 # in this case starts at 0s, stops at 4.2375625s,
 # generates 67801 items.
-time = np.linspace(0., samples.shape[0] / samplerate, signal.shape[0])
+time = np.linspace(0., samples.shape[0] /
+            \ samplerate, signal.shape[0])
 
 # plots time variable in x axis and left
 # channel amplitude on y axis
@@ -371,7 +372,8 @@ plt.show()
 
 
 ```python
-sample_rate, samples = scipy.io.wavfile.read('output1.wav')
+sample_rate, samples =
+              scipy.io.wavfile.read('output1.wav')
 
 
 def log_specgram(audio, sample_rate, window_size=20,
@@ -390,7 +392,8 @@ def log_specgram(audio, sample_rate, window_size=20,
 
 
 
-freqs, times, spectrogram = log_specgram(samples, sample_rate)
+freqs, times, spectrogram =
+                    log_specgram(samples, sample_rate)
 
 fig = plt.figure(figsize=(14, 8))
 ax1 = fig.add_subplot(211)
@@ -398,11 +401,17 @@ ax1.set_yticks(freqs[::16])
 ax1.set_xticks(times[::16])
 ax1.set_title('Raw wave of Mono Signal')
 ax1.set_ylabel('Amplitude')
-ax1.plot(np.linspace(0, len(samples) / sample_rate, num=len(samples)), samples)
+ax1.plot(np.linspace(0, len(samples) /
+              sample_rate, num=len(samples)), samples)
 
 ax2 = fig.add_subplot(212)
-ax2.imshow(spectrogram.T, aspect='auto', origin='lower',
-          extent=[times.min(), times.max(), freqs.min(), freqs.max()])
+ax2.imshow(spectrogram.T,
+            aspect='auto',
+            origin='lower',
+          extent=[times.min(),
+          times.max(),
+          freqs.min(), 
+          freqs.max()])
 ax2.set_yticks(freqs[::16])
 ax2.set_xticks(times[::16])
 ax2.set_title('Spectrogram of Mono Signal')
