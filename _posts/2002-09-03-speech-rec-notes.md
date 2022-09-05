@@ -57,7 +57,7 @@ A common example is the conversion of a sound wave (a continuous signal) to a se
 
 An important aspect of Sampling is the Nyquist Theorem. The Nyquist Theorem states that in order to adequately reproduce a continuous-time signal it should sampled at a rate that is 2X the highest frequency you wish to record.
 
-<p style="text-align: center;"> ***Nyquist Sampling*** </p>
+<p style="text-align: center;"> **Nyquist Sampling** </p>
 
 <p style="text-align: center;">  $ (f) = d/2 $ </p>
 
@@ -164,7 +164,7 @@ The formula can be used to the heating effect of a voltage in a resistor. In the
 
 ### What is the difference between scipy.signal.stft and scipy.signal.spectrogram
 
-The ***short-time Fourier transform (STFT)***, is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.
+The **short-time Fourier transform (STFT)**, is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.
 
 
 In practice, the procedure for computing STFTs is to divide a longer time signal into shorter segments of equal length and then compute the Fourier transform separately on each shorter segment.
@@ -173,13 +173,13 @@ In practice, the procedure for computing STFTs is to divide a longer time signal
 This reveals the Fourier spectrum on each shorter segment. One then usually plots the changing spectra as a function of time.
 
 
-A ***spectrogram*** is a visual representation of the spectrum of frequencies of a signal as it varies with time.
+A **spectrogram** is a visual representation of the spectrum of frequencies of a signal as it varies with time.
 
 
-The spectrogram basically cuts your ***signal in small windows***, and display a range of colors showing the intensity of this or that specific frequency. ***Exactly as the STFT. In fact it's using the STFT.***
+The spectrogram basically cuts your **signal in small windows**, and display a range of colors showing the intensity of this or that specific frequency. **Exactly as the STFT. In fact it's using the STFT.**
 
 
-***By definition, the spectrogram is squared magnitude of the short-time Fourier transform (STFT) of the signal s(t):***
+**By definition, the spectrogram is squared magnitude of the short-time Fourier transform (STFT) of the signal s(t):**
 
 
 spectrogram $$ (t, w) = |STFT(t, w)|^2 $$
@@ -330,7 +330,7 @@ One of the first challenges I've had with reading .wav files is getting an error
 
 I've been able to work through this and found this very clear explanation on stackoverflow.
 
-***scipy.io.wavfile.read returns the tuple (rate, data). If the file is stereo, data is a numpy array with shape (nsamples, 2). To get a specific channel, use a slice of data.***
+**scipy.io.wavfile.read returns the tuple (rate, data). If the file is stereo, data is a numpy array with shape (nsamples, 2). To get a specific channel, use a slice of data.**
 
 ```python
 rate, data = wavfile.read(path)
