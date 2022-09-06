@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blogging with Jekyll</title>
+    <script src="https://kit.fontawesome.com/147c0ec98c.js" crossorigin="anonymous"></script>
+    <!-- Mathjax Support -->
+    <!-- Mathjax Support -->
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="/assets/css/styles.css"
+  </head>
+  <body>
+    <div class="site-container">
+    <header>
+  <div class="logo">
+    <a href= "https://www.cekose.com/index.html"> *Cem </a>
+  </div>
+
+  <nav>
+  
+    <a href="https://www.cekose.com/about.html" >About</a>
+  
+    <a href="https://www.cekose.com/tutorials.html" >Tutorials</a>
+  
+    <a href="https://www.cekose.com/notes.html" >Notes</a>
+  
+</nav>
+
+</header>
+
+    <section>
+  <div class="page-content">
+    <h1 id="blogging-with-jekyll">Blogging with Jekyll</h1>
+
+<p>I make this guide in recompense to the hours I wasted taking intro to web-development for granted.</p>
+
+<p>Setting up a Jekyll blog is straight-forward for someone familiar with basic HTML and CSS. Forgetting all the basics didn’t help me personally but working with Jekyll was a good refresher in core concepts.</p>
+
+<p>This will not be a comprehensive guide to Jekyll but more of a reference point for future projects.</p>
+
+<hr />
+
+<h2 id="get-up-and-running">Get up and running</h2>
+
+<h3 id="grab-the-perquisites">Grab the perquisites</h3>
+
+<p>Refer to this for <a href="https://jekyllrb.com/docs/installation/macos/">MacOS</a> perquisites.</p>
+
+<p>Refer to this for <a href="https://jekyllrb.com/docs/installation/ubuntu/">Ubunru</a> and this for other <a href="https://jekyllrb.com/docs/installation/other-linux/">Linux system</a> perquisites.</p>
+
+<p>With everything ready. Install Jekyll using:</p>
+
+<p><code class="language-plaintext highlighter-rouge">gem install jekyll bundler</code></p>
+
+<p>To create a new site, use:</p>
+
+<p><code class="language-plaintext highlighter-rouge">jekyll new JekyllSite</code></p>
+
+<p>This will create the essential config, Gemfiles and directories required to run a Jekyll site.</p>
+
+<p>You’re technically done! To view the generated site locally at http://localhost:4000</p>
+
+<p><img src="https://www.cekose.com/assets/images/notes/blogging-with-jekyll/directory-structure.png" alt="png" /></p>
+
+<p>In a terminal run:</p>
+
+<p><code class="language-plaintext highlighter-rouge">jekyll serve</code></p>
+
+<p>Or to refresh the local web server to rebuild the site any time a change is made run:</p>
+
+<p><code class="language-plaintext highlighter-rouge">jekyll serve --livereload</code></p>
+
+<p>To build a static site for deployment run:</p>
+
+<p><code class="language-plaintext highlighter-rouge">jekyll build</code></p>
+
+<p>This will build a site at director  <code class="language-plaintext highlighter-rouge">_site</code>.</p>
+
+<hr />
+
+<h2 id="connecting-pieces">Connecting Pieces</h2>
+
+<p>Jekyll makes use of Liquid, a templating language and Front Matter, snippets of YAML to connect variables and layouts stored in set directories created with the following naming convention _site.</p>
+
+<p>Below is a brief description of what and where everything is.</p>
+
+<ul>
+  <li>_config.yml: Provides the basic settings for the website. The website title, description and URL are stored here.</li>
+  <li>_includes: Stores the modular components of the website e.g. the header and footer.</li>
+  <li>_layouts: Includes the templates used by your website’s pages.</li>
+  <li>_posts: Stores individual posts.</li>
+  <li>_saas: Holds the scss files that define the css styling of the website.</li>
+  <li>_site: Stores the files generate by Jekyll after executing jekyll build.</li>
+  <li>_data: Stores data files used to separate content from source code.</li>
+</ul>
+
+<h3 id="front-matter">Front Matter</h3>
+
+<p>Front Matter is a snippet of YAML placed between two triple-dashed lines at the start of a file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+title: Tutorial
+---
+</code></pre></div></div>
+
+<p>Front Matter can be used to set the variables of a page. This includes the basic information such as the title and layout of a page.</p>
+
+<h3 id="objects">Objects</h3>
+
+<p>Predefined variables stored in the <code class="language-plaintext highlighter-rouge">_data</code> directory can be called as objects using double curly braces.</p>
+
+<p>For a full list of built in Jekyll variables refer to <a href="https://jekyllrb.com/docs/variables/">Jekyll Docs</a></p>
+
+<h3 id="tags">Tags</h3>
+
+<p>Tags are used to define the logic and control flow of a page.</p>
+
+<p>The include tag allows content stores in the <code class="language-plaintext highlighter-rouge">_include</code> folder to be included in other pages.</p>
+
+<p>Similarly, the <code class="language-plaintext highlighter-rouge">content</code> tag will place the contents of the posts stored in the <code class="language-plaintext highlighter-rouge">_posts</code> folder.</p>
+
+<hr />
+
+<h2 id="styling">Styling</h2>
+
+<p>To set css styles to a particular page create a <code class="language-plaintext highlighter-rouge">.scss</code> file corrosponding to the page name of the page you want the style to apply to e.g. page.html -&gt; page.scss
+Import the style sheet to <code class="language-plaintext highlighter-rouge">styles.scss</code> file using <code class="language-plaintext highlighter-rouge">@import</code>.</p>
+
+<p><img src="https://www.cekose.com/assets/images/notes/blogging-with-jekyll/css-import.png" alt="png" /></p>
+
+<hr />
+
+<h2 id="making-posts">Making posts</h2>
+
+<p>Live posts should be stored in a folder name with the regular naming convention <code class="language-plaintext highlighter-rouge">_posts</code> or similar. Jekyll posts usually follow the naming convention YEAR-MONTH-DAY e.g. <code class="language-plaintext highlighter-rouge">2022-09-06-sample post.md</code></p>
+
+<p>Like other pages, posts can call on existing layouts using Front Matter.</p>
+
+<hr />
+
+<h2 id="posting-jupyter-notebooks">Posting Jupyter Notebooks</h2>
+
+<p>Jupyter Notebooks can be converted to markdown or html files. Image files that are to be included in notebook markdown files need to be placed in the images folder found under the assets folder. A new subdirector can be created to organize images for individual projects.</p>
+
+<p>Images are linked using the following method in markdown:</p>
+
+<p><code class="language-plaintext highlighter-rouge">![png](https://www.cekose.com/assets/images/notes/speech-rec-notes/output_7_1.png)</code></p>
+
+<p>The object site.url is a variable set in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+
+<hr />
+
+<h2 id="scientific-equations">Scientific Equations</h2>
+
+<p>Mathjax is used to render scientific equations in markdown. The following source needs to be included in the websites <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag.
+    <code class="language-plaintext highlighter-rouge">
+    &lt;script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"&gt;
+    &lt;/script&gt;
+   </code></p>
+
+<hr />
+
+<h2 id="deploying-the-website-on-github-pages">Deploying the website on GitHub pages.</h2>
+
+<p>To generate the static site files, in a terminal within your website directory execute:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Jekyll build</code></p>
+
+<p>Add, commit and push the final state of the directory to GitHub.</p>
+
+<p>In GitHub head to your repositories Settings. Access Pages. Under Build and deployment select the correct branch where the final build files were uploaded.</p>
+
+<p>Make sure to set the site url and other configurations in your _config.yml file to reflect the url of your github pages account e.g accountname,github.io/website.</p>
+
+<p>Make sure the styling and navigation links of your website also reflect this.</p>
+
+<p>That should be it!</p>
+
+  </div>
+</section>
+
+    <footer>
+  <div class="footer-wrap">
+    <div class="footer-tagline">
+    <p></p>
+
+    </div>
+    <div class="social-media">
+      <nav>
+        
+          <a href="mailto: contact@cekose.com" target="_blank"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        
+          <a href="https://www.gitlab.com/cemkose" target="_blank"><i class="fa-brands fa-gitlab" aria-hidden="true"></i></a>
+        
+          <a href="https://www.gitlab.com/cemkose" target="_blank"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+        
+      </nav>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </body>
+</html>

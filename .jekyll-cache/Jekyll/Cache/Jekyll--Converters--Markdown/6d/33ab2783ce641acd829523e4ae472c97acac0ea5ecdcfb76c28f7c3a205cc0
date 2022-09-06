@@ -1,0 +1,174 @@
+I"�<h1 id="conda-cli-cheat-sheet">Conda CLI Cheat-Sheet</h1>
+
+<hr />
+
+<h2 id="overview">Overview</h2>
+
+<p>The <b>conda</b> command is the primary interface for managing installations of various packages.</p>
+
+<p>Many frequently used command options that use <b>2 dashes</b> (–) can be <b>abbreviated</b> using <b>1 dash</b> and the <b>first letter</b> of the option.</p>
+
+<p><b>–envs -&gt; -e –name -&gt; -n</b></p>
+
+<hr />
+
+<h2 id="managing-conda">Managing Conda</h2>
+
+<h3 id="get-conda-version">Get conda version:</h3>
+
+<blockquote>
+  <p>– conda –version conda -V</p>
+</blockquote>
+
+<h3 id="update-conda-to-the-current-version">Update conda to the current version:</h3>
+
+<blockquote>
+  <p>– conda update conda</p>
+</blockquote>
+
+<hr />
+
+<h2 id="managing-environments">Managing Environments</h2>
+
+<p>Conda allows you to create separate environments containing <b>files</b>, <b>packages</b> and <b>dependencies</b> that do <b>not</b> interact with each other.</p>
+
+<p>The default conda environment is named <b>base</b>. Keep programs <b>isolated</b> by creating <b>separate</b> environments.</p>
+
+<hr />
+
+<h3 id="creating-a-new-environment-and-installing-a-package-in-it">Creating a new environment and installing a package in it.</h3>
+
+<blockquote>
+  <p>– conda create –name envname tensorflow</p>
+</blockquote>
+
+<blockquote>
+  <p>– conda create -n envname tensorflow</p>
+</blockquote>
+
+<p>Conda checks to see what <b>additional packages</b> tensorflow will need, and asks if you want to proceed.</p>
+
+<h3 id="to-activate-the-new-environment">To activate the new environment</h3>
+
+<blockquote>
+  <p>– conda activate envname</p>
+</blockquote>
+
+<h3 id="to-see-a-list-of-all-you-environments">To see a list of all you Environments</h3>
+
+<blockquote>
+  <p>– conda info –envs</p>
+</blockquote>
+
+<blockquote>
+  <p>– conda info -e</p>
+</blockquote>
+
+<h3 id="to-change-current-environment-back-to-base">To change current environment back to base</h3>
+
+<blockquote>
+  <p>– conda activate</p>
+</blockquote>
+
+<h3 id="to-deactivate-current-environment">To deactivate current environment</h3>
+
+<blockquote>
+  <p>– conda deactivate</p>
+</blockquote>
+
+<h3 id="delete-an-environment">Delete an environment</h3>
+
+<blockquote>
+  <p>– conda env remove –name envname</p>
+</blockquote>
+
+<hr />
+
+<h2 id="managing-python">Managing Python</h2>
+
+<p>When a new environment is created conda <b>installs</b> the <b>same Python version</b> you used when you <b>downloaded and installed Anaconda</b>.</p>
+
+<p>To use a <b>different</b> version of <b>Python</b> create a <b>new</b> environment and <b>specify</b> the <b>version</b> of <b>Python</b> that you want.</p>
+
+<blockquote>
+  <p>– conda create –name envname python=2.7</p>
+</blockquote>
+
+<blockquote>
+  <p>– conda create -n envname python=3.5</p>
+</blockquote>
+
+<h3 id="verify-which-version-of-python-is-in-your-current-environment">Verify which version of Python is in your current environment</h3>
+
+<blockquote>
+  <p>– python –version python -V</p>
+</blockquote>
+
+<hr />
+
+<h2 id="managing-packages">Managing packages</h2>
+
+<h3 id="to-check-if-a-package-is-available-from-the-anaconda-repository">To check if a package is available from the anaconda repository</h3>
+
+<blockquote>
+  <p>– conda search tensorflow</p>
+</blockquote>
+
+<p>If conda displays a list of <b>packages</b> with that <b>name</b> you know that the package is <b>available</b> on the <b>Anaconda repository</b>.</p>
+
+<h3 id="to-install-package-into-current-environment">To install package into current environment</h3>
+
+<blockquote>
+  <p>– conda install tensorflow</p>
+</blockquote>
+
+<h3 id="to-list-all-packages-available-in-current-environment">To list all packages available in current environment</h3>
+
+<blockquote>
+  <p>– conda list</p>
+</blockquote>
+
+<hr />
+
+<h2 id="sharing-environments">Sharing Environments</h2>
+
+<h3 id="make-an-exact-copy-of-an-environment">Make an exact copy of an environment</h3>
+
+<blockquote>
+  <p>– conda create –clone envname –name newenv</p>
+</blockquote>
+
+<h3 id="export-an-environment-to-a-yaml-file-that-can-be-read-on-windows-macos-and-linux">Export an environment to a YAML file that can be read on Windows, macOS and Linux</h3>
+
+<blockquote>
+  <p>– conda env export –name envname &gt; envname.yml</p>
+</blockquote>
+
+<h3 id="create-an-environment-from-the-file-named-environmentyml-in-the-current-directory">Create an environment from the file named environment.yml in the current directory</h3>
+
+<blockquote>
+  <p>– conda env create</p>
+</blockquote>
+
+<hr />
+
+<h2 id="additional-useful-commands">Additional Useful Commands</h2>
+
+<h3 id="detailed-information-about-package-version">Detailed information about package version</h3>
+
+<blockquote>
+  <p>– conda search pkgname –info</p>
+</blockquote>
+
+<h3 id="remove-unused-cached-package-version">Remove unused cached package version</h3>
+
+<blockquote>
+  <p>– conda clean –packages</p>
+</blockquote>
+
+<h3 id="remove-a-package-from-an-environment">Remove a package from an environment</h3>
+
+<blockquote>
+  <p>– conda uninstall pkgname –name envname</p>
+</blockquote>
+:ET
