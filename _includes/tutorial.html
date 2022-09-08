@@ -2,7 +2,7 @@
   <div class="thumbnail-container">
     <h1> Tutorial Posts</h1>
     {% for tutorial in site.data.tutorials %}
-        <a href="{{ site.url }}/tutorials/{{tutorial.file-name}}" class="thumbnail" style="background-image: url({{ site.baseurl }}/assets/images/tutorials/{{tutorial.folder}}/thumbnail.jpg)">
+        <a href="{{ site.url }}/tutorials/{{tutorial.file-name}}" class="thumbnail" style="background-image: url({{ site.url }}/assets/images/tutorials/{{tutorial.folder}}/thumbnail.jpg)">
 
           <div class="thumbnail-overlay">
             <strong>{{ tutorial.name }}</strong>
