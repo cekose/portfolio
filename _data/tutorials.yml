@@ -1,6 +1,6 @@
-- name: 'Test 1'
+- name: 'LoPoli Art'
   folder: 'project-1'
-  file-name: 'tutorial-1'
+  file-name: 'LoPoli-Art'
 
 - name: 'Test 2'
   folder: 'project-2'

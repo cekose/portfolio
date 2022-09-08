@@ -1,4 +1,4 @@
-I"!<h1 id="blogging-with-jekyll">Blogging with Jekyll</h1>
+I"<h1 id="blogging-with-jekyll">Blogging with Jekyll</h1>
 
 <p>I make this guide in recompense to the hours I wasted taking intro to web-development for granted.</p>
 
@@ -28,7 +28,7 @@
 
 <p>You’re technically done! To view the generated site locally at http://localhost:4000</p>
 
-<p><img src="https://www.cekose.com/assets/images/notes/blogging-with-jekyll/directory-structure.png" alt="png" /></p>
+<p><img src="http://localhost:4000/assets/images/notes/blogging-with-jekyll/directory-structure.png" alt="png" /></p>
 
 <p>In a terminal run:</p>
 
@@ -95,7 +95,7 @@ title: Tutorial
 <p>To set css styles to a particular page create a <code class="language-plaintext highlighter-rouge">.scss</code> file corrosponding to the page name of the page you want the style to apply to e.g. page.html -&gt; page.scss
 Import the style sheet to <code class="language-plaintext highlighter-rouge">styles.scss</code> file using <code class="language-plaintext highlighter-rouge">@import</code>.</p>
 
-<p><img src="https://www.cekose.com/assets/images/notes/blogging-with-jekyll/css-import.png" alt="png" /></p>
+<p><img src="http://localhost:4000/assets/images/notes/blogging-with-jekyll/css-import.png" alt="png" /></p>
 
 <hr />
 
@@ -113,7 +113,7 @@ Import the style sheet to <code class="language-plaintext highlighter-rouge">sty
 
 <p>Images are linked using the following method in markdown:</p>
 
-<p><code class="language-plaintext highlighter-rouge">![png](https://www.cekose.com/assets/images/notes/speech-rec-notes/output_7_1.png)</code></p>
+<p><code class="language-plaintext highlighter-rouge">![png](http://localhost:4000/assets/images/notes/speech-rec-notes/output_7_1.png)</code></p>
 
 <p>The object site.url is a variable set in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
 

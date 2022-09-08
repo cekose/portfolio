@@ -1,11 +1,11 @@
 ---
 layout: page
 author: Cem Kose
-title: Test Code Snipet Post
-excerpt: Testing adding code snipets.
+title: Test Code Snipoet Post
+excerpt: Testing adding code snippets.
 ---
 
-Just a test post2
+Just testing css for code snippets.
 
 
 ```python
@@ -22,7 +22,7 @@ signal = signal[0:int(3.3 * sample_rate)]
 # items to generate within the range= )
 # in this case starts at 0s, stops at 4.2375625s,
 # generates 67801 items.
-time = np.linspace(0., samples.shape[0] / samplerate, signal.shape[0], samples.shape[0], signal.shape[0], samples.shape[0] )
+time = np.linspace(0., samples.shape[0] / samplerate, signal.shape[0])
 
 # plots time variable in x axis and left
 # channel amplitude on y axis
