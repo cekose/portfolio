@@ -4,7 +4,7 @@ author: Cem Kose
 title: It's all Polygons
 ---
 
-# It's all Polygons
+# It's all Polygons 111
 
 You ever do that exercise in art class way back when, where you would draw a bunch of small points and a few larger points and join them together using a straight edge? You’d end up with a brutal looking geometric image, then you’d colour it in to make it look groovy.
 
